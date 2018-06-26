@@ -182,6 +182,7 @@ defmodule EctoDripper do
               :no_args ->
                 def unquote(:"query_#{query_key}")(query),
                   do: apply(__MODULE__, unquote(query_func), [query])
+
                 def unquote(:"query_#{query_key}")(query, _args),
                   do: apply(__MODULE__, unquote(query_func), [query])
 

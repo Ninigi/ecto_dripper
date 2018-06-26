@@ -6,11 +6,11 @@ defmodule EctoDripper.MixProject do
       app: :ecto_dripper,
       version: "0.1.0",
       elixir: "~> 1.6",
-      elixirc_paths: elixirc_paths(Mix.env),
+      elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       description: description(),
-      package: package(),
+      package: package()
     ]
   end
 
@@ -25,7 +25,7 @@ defmodule EctoDripper.MixProject do
   defp deps do
     [
       {:ecto, "~> 2.2"},
-      {:ex_doc, "~> 0.14", only: :dev},
+      {:ex_doc, "~> 0.14", only: :dev}
     ]
   end
 
