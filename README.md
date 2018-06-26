@@ -1,11 +1,10 @@
 # EctoDripper
 
-Provides composable ecto queries following a convention of `query_x(queryable, %{x: "asdf"})`, or `query_all(queryable, %{x: "asdf"})`.
+Provides an easy way to create composable ecto queries following a convention of `query_x(queryable, %{x: "asdf"})`, or `query_all(queryable, %{x: "asdf"})`.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `ecto_dripper` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `ecto_dripper` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -25,7 +24,7 @@ I wrote this lib as part of another project when I realized I am following the s
 
 ## Composable Queries
 
-Composable in this case means "pipable", as in create a bunch of queries you can pipe together, or use the convenince function `query_all/2` to create queries from arguments.
+Composable in this case means "pipable", as in create a bunch of queries you can pipe together, or use the convenience function `query_all/2` to create queries from arguments.
 
 Because of elixirs awesome pattern matching, we can just blindly pipe query functions together and only apply them if a certain key is in the arguments.
 
@@ -171,7 +170,7 @@ end
 ```
 
 If you want your query argument different from the field name, you can do so by adding a third field to the option:
-`[:my_status_thing, :==, :status]
+`[:my_status_thing, :==, :status]`
 
 ```elixir
 def query_status(query, %{my_status_thing: _} = args) do
