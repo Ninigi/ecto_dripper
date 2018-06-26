@@ -1,5 +1,7 @@
 # EctoDripper
 
+[![Hex.pm](https://img.shields.io/hexpm/v/ecto_dripper.svg)](https://hex.pm/packages/ecto_dripper)
+
 Provides composable ecto queries following a convention of `query_x(queryable, %{x: "asdf"})`, or `query_all(queryable, %{x: "asdf"})`.
 
 ## Installation
