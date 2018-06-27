@@ -57,21 +57,21 @@ defmodule MyApp.SomeQuery do
       [:small_with_status_up]
     ]
 
-  defp status_down(query, args)
-  defp status_down(query, %{status_down: true}) do
+  def status_down(query, args)
+  def status_down(query, %{status_down: true}) do
     from(
       i in query,
       where: i.status == ^"down"
     )
   end
-  defp status_down(query, %{status_down: _}) do
+  def status_down(query, %{status_down: _}) do
     from(
       i in query,
       where: i.status != ^"down"
     )
   end
 
-  defp small_with_status_up(query, _args) do
+  def small_with_status_up(query, _args) do
     from(
       i in query,
       where: i.status == ^"up", i.height <= 10
