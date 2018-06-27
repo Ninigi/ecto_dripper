@@ -31,16 +31,20 @@ Composable in this case means "pipable", as in create a bunch of queries you can
 Because of elixirs awesome pattern matching, we can just blindly pipe query functions together and only apply them if a certain key is in the arguments.
 
 ```elixir
-args = %{query_this: "asdf"}
-args2 = %{query_that: "asdf"}
+args = %{this_arg: "asdf"}
+args2 = %{that_arg: "asdf"}
 
-# Does only query for :query_this
+# Does only query for :this_arg
 MyApp.MySchema
 |> MyApp.MyQuery.query_all(args)
 
-# Does only query for :query_that
+# Does only query for :that_arg
 MyApp.MySchema
 |> MyApp.MyQuery.query_all(args2)
+
+# Or use a specific query
+MyApp.MySchema
+|> MyApp.MyQuery.query_this_arg(args)
 ```
 
 ## Basic Usage
