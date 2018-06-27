@@ -31,16 +31,20 @@ Composable in this case means "pipable", as in create a bunch of queries you can
 Because of elixirs awesome pattern matching, we can just blindly pipe query functions together and only apply them if a certain key is in the arguments.
 
 ```elixir
-args = %{query_this: "asdf"}
-args2 = %{query_that: "asdf"}
+args = %{this_arg: "asdf"}
+args2 = %{that_arg: "asdf"}
 
-# Does only query for :query_this
+# Does only query for :this_arg
 MyApp.MySchema
 |> MyApp.MyQuery.query_all(args)
 
-# Does only query for :query_that
+# Does only query for :that_arg
 MyApp.MySchema
 |> MyApp.MyQuery.query_all(args2)
+
+# Or use a specific query
+MyApp.MySchema
+|> MyApp.MyQuery.query_this_arg(args)
 ```
 
 ## Basic Usage
@@ -57,21 +61,21 @@ defmodule MyApp.SomeQuery do
       [:small_with_status_up]
     ]
 
-  defp status_down(query, args)
-  defp status_down(query, %{status_down: true}) do
+  def status_down(query, args)
+  def status_down(query, %{status_down: true}) do
     from(
       i in query,
       where: i.status == ^"down"
     )
   end
-  defp status_down(query, %{status_down: _}) do
+  def status_down(query, %{status_down: _}) do
     from(
       i in query,
       where: i.status != ^"down"
     )
   end
 
-  defp small_with_status_up(query, _args) do
+  def small_with_status_up(query, _args) do
     from(
       i in query,
       where: i.status == ^"up", i.height <= 10
@@ -190,6 +194,10 @@ def name_or_identifier(query, %{name_or_identifier: _} = args) do
   MyModule.my_handler(query, args)
 end
 ```
+
+## Read more
+
+[A quick tutorial for usage in phoenix](https://medium.com/@fabian.zitter/phoenix-with-ectodripper-a-tutorial-i-guess-1578e4152f62)
 
 ## Repo.insert(%Contribution{code: "def awesome"})
 
