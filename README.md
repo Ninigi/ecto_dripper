@@ -191,6 +191,10 @@ def name_or_identifier(query, %{name_or_identifier: _} = args) do
 end
 ```
 
+## Read more
+
+[A quick tutorial for usage in phoenix](https://medium.com/@fabian.zitter/phoenix-with-ectodripper-a-tutorial-i-guess-1578e4152f62)
+
 ## Repo.insert(%Contribution{code: "def awesome"})
 
 **Contributions are highly welcome**
