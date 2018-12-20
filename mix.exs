@@ -5,7 +5,7 @@ defmodule EctoDripper.MixProject do
     [
       app: :ecto_dripper,
       version: "1.0.0",
-      elixir: "~> 1.7",
+      elixir: "~> 1.5",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       deps: deps(),
