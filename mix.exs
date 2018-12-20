@@ -25,7 +25,7 @@ defmodule EctoDripper.MixProject do
   defp deps do
     [
       {:ecto_sql, "~> 3.0"},
-      {:ex_doc, "~> 0.14", only: :dev}
+      {:ex_doc, "~> 0.19", only: :dev}
     ]
   end
 
