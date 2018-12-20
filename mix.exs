@@ -42,7 +42,7 @@ defmodule EctoDripper.MixProject do
   defp package() do
     [
       name: "ecto_dripper",
-      files: ["lib", "mix.exs", "README.md", "LICENSE.md"],
+      files: ["lib", "mix.exs", "README.md", "LICENSE.md", ".formatter.exs"],
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/ninigi/ecto_dripper"},
       maintainers: ["Fabian Zitter"]
