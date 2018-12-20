@@ -106,7 +106,7 @@ defmodule EctoDripper do
       ## Examples
 
           iex> BuiltInTestQuery.query_all("a_table", %{eq_field: "123status", gt_field: 12})
-          #Ecto.Query<from a in "a_table", where: a.eq_field == ^"123status", where: a.gt_field > ^12>
+          #Ecto.Query<from a0 in "a_table", where: a0.eq_field == ^"123status", where: a0.gt_field > ^12>
 
       """
       @spec query_all(Ecto.Queryable.t(), map) :: Ecto.Query.t() | Ecto.Queryable.t()

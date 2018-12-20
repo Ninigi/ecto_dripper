@@ -4,14 +4,14 @@ defmodule EctoDripperTest do
 
   describe "[:eq_field, :==]" do
     test "creates query_eq_field/2 and returns the correct query" do
-      expected_query = "#Ecto.Query<from t in \"table\", where: t.eq_field == ^\"equal\">"
+      expected_query = "#Ecto.Query<from t0 in \"table\", where: t0.eq_field == ^\"equal\">"
 
       assert inspect(BuiltInTestQuery.query_eq_field("table", %{eq_field: "equal"})) ==
                expected_query
     end
 
     test "adds the query to query_all/2" do
-      expected_query = "#Ecto.Query<from t in \"table\", where: t.eq_field == ^\"equal\">"
+      expected_query = "#Ecto.Query<from t0 in \"table\", where: t0.eq_field == ^\"equal\">"
       assert inspect(BuiltInTestQuery.query_all("table", %{eq_field: "equal"})) == expected_query
     end
 
@@ -25,14 +25,14 @@ defmodule EctoDripperTest do
 
   describe "[:neq_field, :!=]" do
     test "creates query_neq_field/2 and returns the correct query" do
-      expected_query = "#Ecto.Query<from t in \"table\", where: t.neq_field != ^\"not equal\">"
+      expected_query = "#Ecto.Query<from t0 in \"table\", where: t0.neq_field != ^\"not equal\">"
 
       assert inspect(BuiltInTestQuery.query_neq_field("table", %{neq_field: "not equal"})) ==
                expected_query
     end
 
     test "adds the query to query_all/2" do
-      expected_query = "#Ecto.Query<from t in \"table\", where: t.neq_field != ^\"not equal\">"
+      expected_query = "#Ecto.Query<from t0 in \"table\", where: t0.neq_field != ^\"not equal\">"
 
       assert inspect(BuiltInTestQuery.query_all("table", %{neq_field: "not equal"})) ==
                expected_query
@@ -48,14 +48,14 @@ defmodule EctoDripperTest do
 
   describe "[:lt_field, :<]" do
     test "creates query_lt_field/2 and returns the correct query" do
-      expected_query = "#Ecto.Query<from t in \"table\", where: t.lt_field < ^\"less than\">"
+      expected_query = "#Ecto.Query<from t0 in \"table\", where: t0.lt_field < ^\"less than\">"
 
       assert inspect(BuiltInTestQuery.query_lt_field("table", %{lt_field: "less than"})) ==
                expected_query
     end
 
     test "adds the query to query_all/2" do
-      expected_query = "#Ecto.Query<from t in \"table\", where: t.lt_field < ^\"less than\">"
+      expected_query = "#Ecto.Query<from t0 in \"table\", where: t0.lt_field < ^\"less than\">"
 
       assert inspect(BuiltInTestQuery.query_all("table", %{lt_field: "less than"})) ==
                expected_query
@@ -71,14 +71,14 @@ defmodule EctoDripperTest do
 
   describe "[:gt_field, :>]" do
     test "creates query_gt_field/2 and returns the correct query" do
-      expected_query = "#Ecto.Query<from t in \"table\", where: t.gt_field > ^\"greater than\">"
+      expected_query = "#Ecto.Query<from t0 in \"table\", where: t0.gt_field > ^\"greater than\">"
 
       assert inspect(BuiltInTestQuery.query_gt_field("table", %{gt_field: "greater than"})) ==
                expected_query
     end
 
     test "adds the query to query_all/2" do
-      expected_query = "#Ecto.Query<from t in \"table\", where: t.gt_field > ^\"greater than\">"
+      expected_query = "#Ecto.Query<from t0 in \"table\", where: t0.gt_field > ^\"greater than\">"
 
       assert inspect(BuiltInTestQuery.query_all("table", %{gt_field: "greater than"})) ==
                expected_query
@@ -95,7 +95,7 @@ defmodule EctoDripperTest do
   describe "[:gte_field, :>=]" do
     test "creates query_gte_field/2 and returns the correct query" do
       expected_query =
-        "#Ecto.Query<from t in \"table\", where: t.gte_field >= ^\"greater than equal\">"
+        "#Ecto.Query<from t0 in \"table\", where: t0.gte_field >= ^\"greater than equal\">"
 
       assert inspect(
                BuiltInTestQuery.query_gte_field("table", %{gte_field: "greater than equal"})
@@ -104,7 +104,7 @@ defmodule EctoDripperTest do
 
     test "adds the query to query_all/2" do
       expected_query =
-        "#Ecto.Query<from t in \"table\", where: t.gte_field >= ^\"greater than equal\">"
+        "#Ecto.Query<from t0 in \"table\", where: t0.gte_field >= ^\"greater than equal\">"
 
       assert inspect(BuiltInTestQuery.query_all("table", %{gte_field: "greater than equal"})) ==
                expected_query
@@ -121,7 +121,7 @@ defmodule EctoDripperTest do
   describe "[:lte_field, :<=]" do
     test "[:lte_field, :<=] creates query_lte_field/2 and returns the correct query" do
       expected_query =
-        "#Ecto.Query<from t in \"table\", where: t.lte_field <= ^\"less than equal\">"
+        "#Ecto.Query<from t0 in \"table\", where: t0.lte_field <= ^\"less than equal\">"
 
       assert inspect(BuiltInTestQuery.query_lte_field("table", %{lte_field: "less than equal"})) ==
                expected_query
@@ -129,7 +129,7 @@ defmodule EctoDripperTest do
 
     test "adds the query to query_all/2" do
       expected_query =
-        "#Ecto.Query<from t in \"table\", where: t.lte_field <= ^\"less than equal\">"
+        "#Ecto.Query<from t0 in \"table\", where: t0.lte_field <= ^\"less than equal\">"
 
       assert inspect(BuiltInTestQuery.query_all("table", %{lte_field: "less than equal"})) ==
                expected_query
